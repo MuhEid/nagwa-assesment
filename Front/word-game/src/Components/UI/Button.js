@@ -1,12 +1,7 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
 export default function Button(props) {
-  // const navigate = useNavigate();
-
   const checkType = () => {
-    props.test(props.content);
-    console.log(props.content);
+    props.enteredAnwser(props.content);
+    // console.log(props.content);
   };
 
   return (
