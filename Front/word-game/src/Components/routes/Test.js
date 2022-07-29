@@ -26,8 +26,6 @@ export default function Test(anwser) {
 
   useEffect(() => {
     if (!intial) {
-      console.log(questions[questionNumber].pos, selectedPos);
-
       if (questions[questionNumber].pos === selectedPos) {
         setScore((score) => ++score);
       } else {
