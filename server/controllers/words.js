@@ -6,6 +6,7 @@ const getData = (req, res) => {
   function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
+
   // shuffle
   function shuffleArray(arr, num) {
     const shuffled = [...arr].sort(() => 0.5 - Math.random());
