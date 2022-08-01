@@ -62,6 +62,7 @@ export default function Test(answer) {
 
   useEffect(() => {}, [isFinished]);
 
+  // once the user chooses an answer .. all buttons will be disabled
   const handlePosClick = (e) => {
     setSelectedPos(e.target.textContent);
     setDisabled(true);
@@ -102,13 +103,28 @@ export default function Test(answer) {
     handleSubmitAnwser();
   }, [isFinished]);
 
+  console.log(questions[questionNumber - 1]);
+
   return !isFinished ? (
-    <div className="p-20 fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-center w-1/2 h-1/2 bg-[#f5f4ea] rounded-3xl shadow-2xl">
-      <div className="fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
+    <div className="fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 text-center w-4/5 h-4/5 lg:w-1/2 lg:h-3/5 bg-[#f5f4ea] rounded-3xl shadow-2xl">
+      <div className="fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-full lg:p-24">
         <p className="self-center font-bold text-5xl mb-10">
           {questions[questionNumber - 1] ? questions[questionNumber - 1].word : ''}
         </p>
-        <div className="flex justify-center w-full my-10">
+
+        <div className="flex flex-col items-center">
+          <p>listen?</p>
+          {questions[questionNumber - 1] ? (
+            <audio
+              src={require(`../../assets/${questions[questionNumber - 1].id}.mp3`)}
+              controls
+            ></audio>
+          ) : (
+            ''
+          )}
+        </div>
+
+        <div className="flex justify-center items-center w-full my-10 flex-col lg:flex-row">
           {questionNumber != null
             ? buttons.map((btn, index) => {
                 return (
@@ -121,9 +137,9 @@ export default function Test(answer) {
           {correct == null ? (
             ''
           ) : correct ? (
-            <p className="text-green-600 bg-green-100">correct</p>
+            <p className="text-xl text-green-600 bg-green-100 h-full">correct</p>
           ) : (
-            <p className="text-red-500 bg-red-200">incorrect</p>
+            <p className="text-xl text-red-500 bg-red-200 h-full">incorrect</p>
           )}
         </div>
 
