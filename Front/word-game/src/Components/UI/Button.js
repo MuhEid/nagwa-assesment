@@ -1,7 +1,9 @@
 export default function Button(props) {
   return (
     <button
-      className={`bg-red-200 mx-10 w-20 rounded-lg ${props.disabled ? 'cursor-not-allowed' : ''}`}
+      className={`bg-green-600 text-center text-xl p-1 w-24 mx-5 rounded-lg text-white ${
+        props.className
+      } ${props.disabled ? 'cursor-not-allowed' : ''}`}
       onClick={props.onClick}
       disabled={props.disabled}
     >
