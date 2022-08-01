@@ -1,4 +1,4 @@
-# nagwa-test
+# nagwa-assesment
 
 In English language, words can be categorized according to their syntactic functions, which is known as "Part of Speech".
 Examples of part of speech: (noun, verb, adjective, ...)
