@@ -154,7 +154,6 @@ export default function Test(answer) {
       <div className="fixed top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2">
         <h1 className="text-5xl mb-10">Thank you for Taking our test</h1>
         <h2 className="text-2xl mb-10">your rank is {rank}</h2>
-        <p>{rank < 30 ? '):' : ''}</p>
         <Button content="Try again" onClick={handleTryAgain} />
       </div>
     </div>
